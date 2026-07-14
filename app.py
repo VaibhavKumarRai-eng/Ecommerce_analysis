@@ -197,10 +197,10 @@ customer_summary = filtered.groupby("CustomerID").agg(
     LastPurchase=("InvoiceDate", "max")
 ).sort_values("TotalSpent", ascending=False).head(10)
 
-st.dataframe(customer_summary, use_container_width=True)
+st.dataframe(customer_summary, width="stretch")
 
 # ---------------------------------------------------------
 # Raw Data (optional expandable section)
 # ---------------------------------------------------------
 with st.expander("Raw Filtered Data Insight"):
-    st.dataframe(filtered.head(500), use_container_width=True)
+    st.dataframe(filtered.head(500), width="stretch")
